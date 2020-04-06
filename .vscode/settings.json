@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/bdf1dbe9-79c8-4370-bbea-efa4938e5f67/resourceGroups/group1/providers/Microsoft.Web/sites/kysymykset",
+    "appService.deploySubpath": ""
+}
