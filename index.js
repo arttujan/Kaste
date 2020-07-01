@@ -3,7 +3,16 @@ const port = process.env.PORT || 3000;
 
 const handler = (req, res) => {
     console.log('server received request');
-    res.end('Testi5');
+    fs.readFile('./index.html', null, function(error, data){
+        if (error) {
+            Response.writeHead(404);
+            Response.write('File not found!');
+        } else {
+            Response.write(data);
+        }
+        Response.end();
+    });
+    Response.end();
 };
 
 const server = http.createServer(handler);
