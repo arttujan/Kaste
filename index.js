@@ -3,7 +3,7 @@ var fs = require('fs');
 const port = process.env.PORT || 3000;
 
 function onRequest(request, response) {
-    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.writeHead(200, {'Content-Type': 'application/content-stream'});
         fs.readFile('./index.html', null, function(error, data) {
         if (error) {
             response.writeHead(404);
