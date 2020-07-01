@@ -1,21 +1,20 @@
 const http = require("http");
 const port = process.env.PORT || 3000;
 
-const handler = (req, res) => {
-    console.log('server received request');
-    fs.readFile('./index.html', null, function(error, data){
+function onRequest(request, response) {
+    response.writeHead(200, {'Content-Type': 'test/html'});
+        fs.readFile('./index.html', null, function(error, data) {
         if (error) {
-            Response.writeHead(404);
-            Response.write('File not found!');
+            response.writeHead(404);
+            response.write('File not found!');
         } else {
-            Response.write(data);
+            response.write(data);
         }
-        Response.end();
+        response.end();
     });
-    Response.end();
-};
+}
 
-const server = http.createServer(handler);
+const server = http.createServer(onRequest);
 
 server.listen(port, err => {
     if (err) {
