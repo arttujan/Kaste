@@ -60,7 +60,7 @@ function requestHandler(req, res) {
 	var
 	fileName = path.basename(req.url) || 'index.html',
 	ext = path.extname(fileName),
-	localFolder = __dirname + '/public/',
+	localFolder = __dirname + '/wwwroot/',
 	page404 = localFolder + '404.html';
  
 	//do we support the requested file type?
