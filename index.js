@@ -1,4 +1,5 @@
 const http = require("http");
+var fs = require('fs');
 const port = process.env.PORT || 3000;
 
 function onRequest(request, response) {
