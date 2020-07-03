@@ -1,0 +1,149 @@
+// Colors
+// -------------------------------------------------------------------
+// Grayscale
+$white:                   #ffffff !default;
+$gray-1:                  #eeeeee !default;
+$gray-2:                  #dddddd !default;
+$gray-3:                  #b2b2b2 !default;
+$gray-4:                  #909090 !default;
+$gray-5:                  #6e6e6e !default;
+$gray-6:                  #4c4c4c !default;
+
+// Hues
+$blue:                    #16a0e5 !default;
+$turquoise:               #18c9a5 !default;
+$green:                   #72c111 !default;
+$yellow:                  #f9b520 !default;
+$orange:                  #f98320 !default;
+$red:                     #d82d2d !default;
+$pink:                    #db4aa6 !default;
+$purple:                  #8647bc !default;
+$brown:                   #9e6025 !default;
+
+// Color scheme
+$primary-color:           $blue !default;
+$secondary-color:         $green !default;
+$tertiary-color:          $yellow !default;
+
+
+// Baseline
+// -------------------------------------------------------------------
+$baseline:                .4rem !default;
+
+
+// Typography
+// -------------------------------------------------------------------
+// Font families
+$sans-serif:              "Open Sans", Avenir, "Avenir Next", Trebuchet, Verdana,
+                          sans-serif !default;
+$serif:                   Georgia, Times, serif !default;
+$monospace:               Monaco, Menlo, Consolas,
+                          monospace !default;
+
+$font-family--base:       $sans-serif !default;
+$font-family--heading:    $sans-serif !default;
+$font-family--reading:    $serif !default;
+$font-family--ui:         $sans-serif !default;
+$font-family--code:       $monospace !default;
+
+// Type scale - good tool: http://type-scale.com/
+$h1:                      2.369rem !default;
+$h2:                      1.777rem !default;
+$h3:                      1.333rem !default;
+$h4:                      1rem !default;
+$h5:                      .75rem !default;
+$h6:                      .75rem !default;
+
+// Finer control over type scale after certain breakpoint (off by default)
+$responsive-type:         false !default;
+$h1--desktop:             2.369rem !default;
+$h2--desktop:             1.777rem !default;
+$h3--desktop:             1.333rem !default;
+$h4--desktop:             1rem !default;
+$h5--desktop:             .75rem !default;
+$h6--desktop:             .75rem !default;
+
+// Text color
+$text-color:              $gray-6 !default;
+
+// Text sizes
+$font-size--mobile:       15px !default;
+$font-size--desktop:      16px !default;
+$font-size--lg:           $h3 !default;
+$font-size--sm:           $h5 !default;
+
+// Weights
+$font-weight--base:       400 !default;
+$font-weight--heading:    700 !default;
+
+// Line heights
+$line-height--base:       $baseline*4 !default;
+$line-height--heading:    1 !default;
+
+
+// Layout
+// -------------------------------------------------------------------
+// Breakpoints
+// Mobile Safari has problems with rems being used in media queries
+$breakpoint--sm:          40em !default;
+$breakpoint--md:          50em !default;
+$breakpoint--lg:          60em !default;
+
+// Max container width
+$max-container-width:     45em !default;
+$max-container-width--lg: 60em !default;
+
+
+// Spaces
+// -------------------------------------------------------------------
+$space-1:                 $baseline*2 !default;
+$space-2:                 $baseline*5 !default;
+$space-3:                 $baseline*8 !default;
+$space-4:                 $baseline*11 !default;
+
+// Specific margins
+$p-mb:                    0 !default;
+$heading-mb:              $p-mb !default;
+
+
+// Links
+// -------------------------------------------------------------------
+$link-color:              $primary-color !default;
+$link-hover-color:        darken($primary-color, 10%) !default;
+$active-link-color:       darken($primary-color, 25%) !default;
+
+
+// Code
+// -------------------------------------------------------------------
+$code-color:              $gray-6 !default;
+$code-bg-color:           $gray-1 !default;
+$code-padding:            $baseline*2 $baseline*2 !default;
+
+
+// Buttons
+// -------------------------------------------------------------------
+$button-padding:          .45rem 1rem .35rem !default;
+$button-padding--sm:      .1rem .6rem 0 !default;
+
+
+// Forms
+// -------------------------------------------------------------------
+$form-padding:            .45rem .8rem .35rem !default;
+
+
+// Borders
+// -------------------------------------------------------------------
+$border-color:            $gray-3 !default;
+$border-style:            solid !default;
+$border-radius:           3px !default;
+$border-width:            1px !default;
+
+
+// Shadows
+// -------------------------------------------------------------------
+$full-shadow:             0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+
+
+// Animations
+// -------------------------------------------------------------------
+$fade:                    .2s ease-out !default;

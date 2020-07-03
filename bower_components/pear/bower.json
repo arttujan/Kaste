@@ -1,0 +1,33 @@
+{
+    "name": "pear",
+    "description": "A lightweight HTML/Sass boilerplate.",
+    "license": "MIT",
+    "version": "2.8.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jrdnbwmn/Pear.git"
+    },
+    "authors": [{
+        "name": "Jordan Bowman",
+        "homepage": "http://jrdnbwmn.com"
+    }],
+    "homepage": "https://github.com/jrdnbwmn/Pear.git",
+    "keywords": [
+        "css",
+        "scss",
+        "sass",
+        "oocss",
+        "html",
+        "grid",
+        "front-end",
+        "web",
+        "responsive",
+        "boilerplate",
+        "framework"
+    ],
+    "ignore": [
+        "CNAME",
+        ".gitignore",
+        "node_modules"
+    ]
+}
