@@ -7,13 +7,13 @@ echo Handling node.js gulp deployment.
 selectNodeVersion  
 
 # 2. Install npm packages  
-if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then  
+if [ -e "$DEPLOYMENT_SOURCE./package.json" ]; then  
   eval $NPM_CMD install  
   exitWithMessageOnError "npm failed"  
 fi  
 
 # 3. Install bower packages  
-if [ -e "$DEPLOYMENT_SOURCE/bower.json" ]; then  
+if [ -e "$DEPLOYMENT_SOURCE./bower.json" ]; then  
   eval $NPM_CMD install bower  
   exitWithMessageOnError "installing bower failed"  
   ./node_modules/.bin/bower install  
@@ -21,7 +21,7 @@ if [ -e "$DEPLOYMENT_SOURCE/bower.json" ]; then
 fi  
 
 # 4. Run gulp for build
-if [ -e "$DEPLOYMENT_SOURCE/gulpfile.js" ]; then  
+if [ -e "$DEPLOYMENT_SOURCE./gulpfile.js" ]; then  
   eval $NPM_CMD install gulp 
   exitWithMessageOnError "installing gulpfailed"  
   ./node_modules/.bin/gulp serve
