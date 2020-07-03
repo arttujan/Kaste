@@ -5,14 +5,28 @@ const port = process.env.PORT || 3000;
 //function to handle HTTP requests
 function onRequest(request, response) {
     response.writeHead(200, {'Content-Type': 'text/html'});
-        fs.readFile('./index.html', null, function(error, data) {
-        if (error) {
-            response.writeHead(404);
-            response.write('File not found!');
+    fs.readFile('./' + request.url, function(err, data) {
+        if (!err) {
+            var dotoffset = request.url.lastIndexOf('.');
+            var mimetype = dotoffset == -1
+                            ? 'text/plain'
+                            : {
+                                '.html' : 'text/html',
+                                '.ico' : 'image/x-icon',
+                                '.jpg' : 'image/jpeg',
+                                '.png' : 'image/png',
+                                '.gif' : 'image/gif',
+                                '.css' : 'text/css',
+                                '.js' : 'text/javascript'
+                                }[ request.url.substr(dotoffset) ];
+            response.setHeader('Content-type' , mimetype);
+            response.end(data);
+            console.log( request.url, mimetype );
         } else {
-            response.write(data);
+            console.log ('file not found: ' + request.url);
+            response.writeHead(404, "Not Found");
+            response.end();
         }
-        response.end();
     });
 }
  
