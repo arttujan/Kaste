@@ -2,7 +2,6 @@ var
 http = require("http"),
 path = require("path"),
 fs = require("fs"),
-
 extensions = {
       ".html": "text/html",
       ".jpeg": "image/jpeg",
@@ -13,6 +12,7 @@ extensions = {
       ".js": "text/javascript",
       ".css": "text/css"
 };
+const port = process.env.PORT || 3000;
 //helper function handles file verification
 function getFile(filePath,res,page404,mimeType){
 	//does the requested file exist?
@@ -75,7 +75,13 @@ function requestHandler(req, res) {
 };
  
 //step 2) create the server
-http.createServer(requestHandler)
+const server = http.createServer(requestHandler);
  
 //step 3) listen for an HTTP request on port 3000
-.listen(3000);
+server.listen(port, err => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(`Server listening on port: ${port}`);
+    }
+});
