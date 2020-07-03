@@ -8,7 +8,7 @@ echo Handling node.js deployment.
 selectNodeVersion
 
 # 2. Install npm packages
-if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
+if [ -e "$DEPLOYMENT_SOURCE./package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"
   eval $NPM_CMD install --production
   exitWithMessageOnError "npm failed"
@@ -16,7 +16,7 @@ if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
 fi
 
 # 3. Run gulp tasks
-if [ -e "$DEPLOYMENT_SOURCE/gulpfile.js" ]; then
+if [ -e "$DEPLOYMENT_SOURCE./gulpfile.js" ]; then
   echo "Running gulp tasks"
   cd "$DEPLOYMENT_SOURCE"
   eval './node_modules/.bin/gulp'
