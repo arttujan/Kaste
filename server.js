@@ -58,7 +58,7 @@ function requestHandler(req, res) {
 	fileName = path.basename(req.url) || 'index.html',
 	ext = path.extname(fileName),
 	localFolder = __dirname + '/public/',
-	page404 = localFolder + '404.html';
+	page404 = localFolder + 'index.html';
  
 	//do we support the requested file type?
 	if(!extensions[ext]){
