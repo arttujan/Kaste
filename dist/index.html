@@ -40,14 +40,68 @@
             <!-- Nappi -->
             <section class="pl4 pt2 pb4">
                 <h2 class="pb1 border--bottom mb2">Suoratoistosivulle</h2>
-                <a class="btn btn--outline" href="">Markun livestriimi</a>
+                <a class="btn btn--outline" onClick="GFG_Fun()" href="">livestriimi</a>
             </section>
         </div>
 
-        <!-- TULOSSA -->
-        <section class="align--center pt2 pb3">
-            <p class="h2">Tulossa syksyllä 2020</p>
+        <div class="container">
+        <section class="pl4 pt2 pb4">
+            <div id="document">
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+                <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+                <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
+                <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+                <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+                <style>.fallback,.player,body,html{overflow:hidden;width:100%;height:100%;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}</style> 
+                    <script> 
+                        !function(){
+                            if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};
+                            g.o=new PerformanceObserver(function(l){
+                            g.e=g.e.concat(l.getEntries())
+                                });
+                                g.o.observe({
+                                    entryTypes:['longtask']
+                                })
+                            }
+                        }(); 
+                        </script> 
+                        <!--[if IE] -->
+                        <script>var cacheBuster = '?' + Math.round((Math.random() * 1000) + new Date().getTime());
+                        </script>
+                        <style data-player="c9b95f27-4169-420c-b280-ee268390d0d4"></style>
+                </head>
+                <body class="vp-center"> 
+                    <div id="soitin" class="vp-video-wrapper transparent">
+                    <!-- SOITIN -->
+                    <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup='{"techorder" : ["flash","html5] }'>
+                    <source src="https://kaste-euno.streaming.media.azure.net/70a3a785-06c8-4a69-b91f-33c42a03cecc/20604948-1198-4b57-9a11-bf4f1991b8f8.ism/manifest" type="rtmp/mp4">
+                    <p class="vjs-no-js">
+                      To view this video please enable JavaScript, and consider upgrading to a
+                      web browser that
+                      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                    </p>
+                    </video>
+                    </div>
+                    <script>                   
+                        function show(divId) { 
+                            $("#" + divId).show(); 
+                        }
+                        function GFG_Fun() { 
+                            show('soitin');  
+                        } 
+                    </script> 
+                </body>
+            </html>
+            </div>
         </section>
+    </div>
+        
 
         <!-- Contact -->
         <section class="bg--secondary-color pt3 pb3">
