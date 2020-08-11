@@ -1,25 +1,23 @@
 @@include("partials/head.html")
 
-    <!-- Header -->
+<!-- Header -->
     <header class="pt2 pb1 align--center">
         <div class="container">
             <h1 title="Kaste App"><img class="logo" src="/img/logotext.png" alt="Kaste App"></h1>
             <p>Suoratoistosovellus opetuskäyttöön</p>
         </div>
     </header>
-
-    <!-- Body -->
+<!-- Body -->
     <main>
-        
-        <div class="container">
-            <!-- Nappi -->
-            <section class="pl4 pt2 pb4">
-                <h2 class="pb1 border--bottom mb2">Suoratoistosivulle</h2>
-                <a class="btn btn--outline" onClick="GFG_Fun()" href="">livestriimi</a>
-            </section>
-        </div>
-
-        <div class="container">
+<!-- Nappi -->
+    <div class="container">
+         <section class="pl4 pt2 pb4">
+            <h2 class="pb1 border--bottom mb2">Suoratoistosivu</h2>
+            <a class="btn btn--outline" onClick="showSoitin()" href="">Kirjaudu Sisään</a>
+        </section>
+    </div>
+<!-- SOITIN -->
+    <div id="soitin" style="display: none;" class="container">
         <section class="pl4 pt2 pb4">
             <div id="document">
             <!DOCTYPE html>
@@ -65,8 +63,7 @@
                         </style>
                 </head>
                 <body class="vp-center"> 
-                    <div id="soitin" class="vp-video-wrapper transparent">
-                    <!-- SOITIN -->
+                    <div class="vp-video-wrapper transparent">
                     <video
                         id="my-video"
                         class="video-js"
@@ -74,10 +71,9 @@
                         preload="auto"
                         width="640"
                         height="264"
-                        poster="MY_VIDEO_POSTER.jpg"
                         data-setup='{"techorder" : ["flash","html5] }'
                     >
-                    <source src="https://kaste-euno.streaming.media.azure.net/b5ae07e5-a609-4d64-9568-da39a5b2de55/5455a6c2-a95a-49d9-aa70-fc2540d19473.ism/manifest(format=mpd-time-csf)" type="application/dash+xml" />
+                    <source src="https://kaste-euno.streaming.media.azure.net/ead62085-2817-4383-9733-4cd1f402cb31/2d6564bc-3963-4687-9a1c-1e64d69522af.ism/manifest(format=mpd-time-csf)" type="application/dash+xml" />
                     <p class="vjs-no-js">
                       To view this video please enable JavaScript, and consider upgrading to a
                       web browser that
@@ -86,44 +82,40 @@
                     </p>
                     </video>
                     </div>
-                    <script>                   
-                        function show(divId) { 
-                            $("#" + divId).show(); 
-                        }
-                        function GFG_Fun() { 
-                            show('soitin');  
-                        } 
-                    </script> 
                 </body>
             </html>
             </div>
         </section>
     </div>
-        
-
-        <!-- Contact -->
-        <section class="bg--secondary-color pt3 pb3">
-            <div class="container">
-                <div class="mb2 align--center">
-                    <h3 class="mb1">Monipuolisempaa opiskelua!</h3>
-                    <p>Mobiililaitteille suunnattu tietovisasovellus, joka mahdollistaa aktivoivan opetustilanteen paikasta riippumatta.</p>
-                </div>
-        </section>
-        
-    </main>
-
-    <!-- Footer -->
-    <footer class="pt2 pb2">
-        <div class="container align--center">
-            <p style="font-size: smaller;">Sovelluksen testaus suoritetaan syksyllä 2020 yhteistyössä </p>
-            <p style="font-size: smaller;">Savonia-ammattikorkeakoulun ensihoidon lehtorin Marko Tolosen kanssa.</p>
-            <ul class="no-bullets list--inline mt1">
-                <li class="mr1"><a href="https://www.facebook.com" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
-                <li class="mr1"><a href="https://www.twitter.com" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
-                <li><a href="https://www.instagram.com" class="link"><img class="icon" src="/img/instagram.svg" alt="Instagram"></a></li>
-            </ul>
-            <p>&copy; Kaste 2020</p>
-        </div>
-    </footer>
+    <script>                   
+        function showSoitin() {
+            var x = document.getElementById("soitin");
+            if (x.style.display === "none") {
+            x.style.display = "block";
+            }
+        }
+    </script>  
+<!-- Contact -->
+    <section class="bg--secondary-color pt3 pb3">
+        <div class="container">
+            <div class="mb2 align--center">
+                <h3 class="mb1">Monipuolisempaa opiskelua!</h3>
+                <p>Mobiililaitteille suunnattu tietovisasovellus, joka mahdollistaa aktivoivan opetustilanteen paikasta riippumatta.</p>
+            </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="pt2 pb2">
+    <div class="container align--center">
+        <p style="font-size: smaller;">Sovelluksen testaus suoritetaan syksyllä 2020 yhteistyössä </p>
+        <p style="font-size: smaller;">Savonia-ammattikorkeakoulun ensihoidon lehtorin Marko Tolosen kanssa.</p>
+        <ul class="no-bullets list--inline mt1">
+            <li class="mr1"><a href="https://www.facebook.com" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
+            <li class="mr1"><a href="https://www.twitter.com" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
+            <li><a href="https://www.instagram.com" class="link"><img class="icon" src="/img/instagram.svg" alt="Instagram"></a></li>
+        </ul>
+        <p>&copy; Kaste 2020</p>
+    </div>
+</footer>
 
 @@include("partials/foot.html")
