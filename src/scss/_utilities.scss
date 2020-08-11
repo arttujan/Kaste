@@ -25,6 +25,8 @@
 .block                 { display: block; }
 .inline-block          { display: inline-block; }
 .inline                { display: inline; }
+.non-visible           { display: none; }
+.visible               { display: visible; }
 
 .flex                  { display: flex; }
 

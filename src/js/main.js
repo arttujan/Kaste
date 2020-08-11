@@ -11,6 +11,6 @@
     })
 }
 }();
-document.getElementById('kirjauduBtn').onclick = function() {
-    document.getElementById('soitin').style.visibility = 'visible';
+function changeClass(){
+    document.getElementById("soitin").className = "container visible";
 }
