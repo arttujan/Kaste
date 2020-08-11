@@ -26,15 +26,6 @@
         <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
         <!-- Interner Explorerin scriptit -->
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-        <!-- Napit -->
-        <script>
-            $('#kirjauduBtn').click(function() {
-                $('#soitin').css('visibility', 'visible');
-            });
-            $('#suljeBtn').click(function() {
-                $('#soitin').css('visibility', 'hidden');
-            });
-        </script> 
         <style>.fallback,.player,body,html{overflow:hidden;width:100%;height:100%;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}</style> 
         <script> 
             !function(){
@@ -67,28 +58,34 @@
 <!-- Body -->
 <main>
 <!-- Nappi -->
-    <div class="container">
+<div class="container">
          <section class="pl4 pt2 pb4">
             <h2 class="pb1 border--bottom mb2">Suoratoistosivu</h2>
             <a id="kirjauduBtn" class="btn btn--outline" href="">Kirjaudu Sisään</a>
         </section>
-    </div>
+</div>
 <!-- SOITIN -->
-    <div id="soitin" style="visibility:hidden" class="container">
-        <section class="pl4 pt2 pb4">
-            <div class="vp-video-wrapper transparent">
-                <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5] }'>
-                <source src="https://kaste-euno.streaming.media.azure.net/ead62085-2817-4383-9733-4cd1f402cb31/2d6564bc-3963-4687-9a1c-1e64d69522af.ism/manifest(format=mpd-time-csf)" type="application/dash+xml">
-                <p class="vjs-no-js">
+<div id="soitin" style="visibility:hidden" class="container">
+     <section class="pl4 pt2 pb4">
+        <div class="vp-video-wrapper transparent">
+            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5] }'>
+            <source src="https://kaste-euno.streaming.media.azure.net/ead62085-2817-4383-9733-4cd1f402cb31/2d6564bc-3963-4687-9a1c-1e64d69522af.ism/manifest(format=mpd-time-csf)" type="application/dash+xml">
+            <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a
                     web browser that
-                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                </p>
-                </video>
-                <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-            </div>
-        </section>
-    </div>
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+            </video>
+            <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+        </div>
+    </section>
+<!-- Nappi -->
+    <script>
+        $('#kirjauduBtn').click(function() {
+            $('#soitin').css('visibility', 'visible');
+        });
+    </script> 
+</div>
 <!-- Contact -->
     <section class="bg--secondary-color pt3 pb3">
         <div class="container">
