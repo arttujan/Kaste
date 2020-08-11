@@ -2,11 +2,10 @@
 <html lang="en-us">
 
     <head>
-
         <!-- Meta -->
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
 
         <title>Kaste</title>
         <meta name="description" content="">
@@ -19,7 +18,40 @@
 
         <!-- favicon.ico. Place these in the root directory. -->
         <link rel="shortcut icon" href="img/favicon.ico">
-
+        
+        <!-- Soitin -->
+        <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+        <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
+        <!-- Interner Explorerin scriptit -->
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <!-- Napit -->
+        <script>
+            $('#kirjauduBtn').click(function() {
+                $('#soitin').css('visibility', 'visible');
+            });
+            $('#suljeBtn').click(function() {
+                $('#soitin').css('visibility', 'hidden');
+            });
+        </script> 
+        <style>.fallback,.player,body,html{overflow:hidden;width:100%;height:100%;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}</style> 
+        <script> 
+            !function(){
+                if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};
+                    g.o=new PerformanceObserver(function(l){
+                    g.e=g.e.concat(l.getEntries())
+                        });
+                        g.o.observe({
+                            entryTypes:['longtask']
+                        })
+                    }
+                }(); 
+        </script> 
+        <!--[if IE] -->
+        <script>var cacheBuster = '?' + Math.round((Math.random() * 1000) + new Date().getTime()); 
+        </script>
+        <style data-player="c9b95f27-4169-420c-b280-ee268390d0d4"></style>
     </head>
 
     <body class="has-animations">
@@ -33,85 +65,43 @@
         </div>
     </header>
 <!-- Body -->
-    <main>
+<main>
 <!-- Nappi -->
     <div class="container">
          <section class="pl4 pt2 pb4">
             <h2 class="pb1 border--bottom mb2">Suoratoistosivu</h2>
-            <a class="btn btn--outline" onClick="showSoitin()" href="">Kirjaudu Sisään</a>
+            <a id="kirjauduBtn" class="btn btn--outline" href="">Kirjaudu Sisään</a>
         </section>
     </div>
 <!-- SOITIN -->
-    <div id="soitin" style="display:none" class="container">
+    <div id="soitin" style="visibility:hidden" class="container">
         <section class="pl4 pt2 pb4">
-            <div id="document">
-            <!DOCTYPE html>
-            <html lang="en">
-                <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+            <div class="vp-video-wrapper transparent">
+                <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5] }'>
+                <source src="https://kaste-euno.streaming.media.azure.net/ead62085-2817-4383-9733-4cd1f402cb31/2d6564bc-3963-4687-9a1c-1e64d69522af.ism/manifest(format=mpd-time-csf)" type="application/dash+xml">
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+                </video>
                 <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
-                <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
-                <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-                <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-                <style>.fallback,.player,body,html{overflow:hidden;width:100%;height:100%;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}</style> 
-                    <script> 
-                        !function(){
-                            if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};
-                            g.o=new PerformanceObserver(function(l){
-                            g.e=g.e.concat(l.getEntries())
-                                });
-                                g.o.observe({
-                                    entryTypes:['longtask']
-                                })
-                            }
-                        }(); 
-                        </script> 
-                        <!--[if IE] -->
-                        <script>var cacheBuster = '?' + Math.round((Math.random() * 1000) + new Date().getTime());
-                        </script>
-                        <style data-player="c9b95f27-4169-420c-b280-ee268390d0d4"></style>
-                </head>
-                <body class="vp-center"> 
-                    <div class="vp-video-wrapper transparent">
-                    <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5] }'>
-                    <source src="https://kaste-euno.streaming.media.azure.net/ead62085-2817-4383-9733-4cd1f402cb31/2d6564bc-3963-4687-9a1c-1e64d69522af.ism/manifest(format=mpd-time-csf)" type="application/dash+xml">
-                    <p class="vjs-no-js">
-                      To view this video please enable JavaScript, and consider upgrading to a
-                      web browser that
-                      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                    </p>
-                    </video>
-                    </div>
-                </body>
-            </html>
             </div>
         </section>
     </div>
-    <script>                   
-        function showSoitin() {
-            var x = document.getElementById("soitin");
-            if (x.style.display === "none") {
-            x.style.display = "block";
-            }
-        }
-    </script>  
 <!-- Contact -->
     <section class="bg--secondary-color pt3 pb3">
         <div class="container">
             <div class="mb2 align--center">
-                <h3 class="mb1">Monipuolisempaa opiskelua!</h3>
+            <!--<h3 class="mb1">Monipuolisempaa opiskelua!</h3>
                 <p>Mobiililaitteille suunnattu tietovisasovellus, joka mahdollistaa aktivoivan opetustilanteen paikasta riippumatta.</p>
+            -->
             </div>
     </div></section>
 </main>
 <!-- Footer -->
 <footer class="pt2 pb2">
     <div class="container align--center">
-        <p style="font-size:smaller">Sovelluksen testaus suoritetaan syksyllä 2020 yhteistyössä </p>
-        <p style="font-size:smaller">Savonia-ammattikorkeakoulun ensihoidon lehtorin Marko Tolosen kanssa.</p>
         <ul class="no-bullets list--inline mt1">
             <li class="mr1"><a href="https://www.facebook.com" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
             <li class="mr1"><a href="https://www.twitter.com" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
