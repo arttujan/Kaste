@@ -11,3 +11,6 @@
     })
 }
 }();
+document.getElementById('kirjauduBtn').onclick = function() {
+    document.getElementById('soitin').style.visibility = 'visible';
+}
