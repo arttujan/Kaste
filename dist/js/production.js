@@ -11,15 +11,12 @@
     })
 }
 }();
-function changeClass(){
-    document.getElementById("soitin").className = "container visible";
-}
 // Config object to be passed to Msal on creation
 const msalConfig = {
     auth: {
-      clientId: "c666fc28-6a50-4e9e-bf88-fc4bb4138e4c",
+      clientId: "b23bcd24-02ec-4176-85b9-6f0050400394",
       authority: "b6d5681b-4a40-4d3a-8e7b-03a70d3991b6",
-      redirectUri: "https://www.kaste.app",
+      redirectUri: "http://localhost:3000/",
     },
     cache: {
       cacheLocation: "sessionStorage", // This configures where your cache will be stored

@@ -57,18 +57,11 @@
     </header>
 <!-- Body -->
 <main>
-<!-- Nappi -->
-<div class="container">
-    <section class="pl4 pt2 pb4">
-        <h2 class="pb1 border--bottom mb2">Suoratoistosivu</h2>
-        <a id="kirjauduBtn" class="btn btn--outline" onclick="changeClass()" href="">Kirjaudu Sisään</a>
-    </section>
-</div>
 <!-- SOITIN -->
-<div id="soitin" class="container non-visible">
-     <section class="pl4 pt2 pb4">
-        <div class="vp-video-wrapper transparent">
-            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5] }'>
+<div id="soitin" class="wrapper">
+     <section class="mobile-m">
+        <div class="videocontent">
+            <video id="my-video" class="video-js vjs-default-skin vjs-16-9" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5]}' , data-setup='{"fluid": true}'>
             <source src="https://kaste-euno.streaming.media.azure.net/ead62085-2817-4383-9733-4cd1f402cb31/2d6564bc-3963-4687-9a1c-1e64d69522af.ism/manifest(format=mpd-time-csf)" type="application/dash+xml">
             <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a
