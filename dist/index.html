@@ -26,7 +26,7 @@
         <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
         <!-- Interner Explorerin scriptit -->
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-        <style>.fallback,.player,body,html{overflow:hidden;width:100%;height:100%;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}</style> 
+        <style>.fallback,.player,body,html{overflow:auto;width:100%;height:100%;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}</style> 
         <script> 
             !function(){
                 if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};
@@ -49,7 +49,7 @@
 
 
 <!-- Header -->
-    <header class="pt2 pb1 align--center">
+    <header class="align--center">
         <div class="container">
             <h1 title="Kaste App"><img class="logo" src="/img/logotext.png" alt="Kaste App"></h1>
             <p>Suoratoistosovellus opetuskäyttöön</p>
@@ -58,10 +58,11 @@
 <!-- Body -->
 <main>
 <!-- SOITIN -->
-<div id="soitin" class="wrapper">
-     <section class="mobile-m">
+<div class="grid-row">
+    <div id="soitin" class="grid-column span-four-fifths">
+        <section class="mobile-m">
         <div class="videocontent">
-            <video id="my-video" class="video-js vjs-default-skin vjs-4-3" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5]}' , data-setup='{"fluid": true}'>
+            <video id="my-video" class="video-js vjs-default-skin vjs-fill" controls responsive="true" preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash","html5]}' , data-setup='{"fluid": true}'>
             <source src="https://kaste-euno.streaming.media.azure.net/ead62085-2817-4383-9733-4cd1f402cb31/2d6564bc-3963-4687-9a1c-1e64d69522af.ism/manifest(format=mpd-time-csf)" type="application/dash+xml">
             <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a
@@ -71,25 +72,26 @@
             </video>
             <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
         </div>
-    </section>
-</div>
-<!-- NAPIT -->
-    <section class="bg--secondary-color pt2 pb2 pl2 pr2 align--center">
-        <div class="grid-row">
-            <div class="grid-column mb1">
+        </section>
+    </div>
+    <div class="grid-column span-one-fifth">
+    <!-- NAPIT -->
+    <section class="bg--secondary-color">
+            <div class="grid-row mt4 mb4 align--center">
                 <a class="btn btn--outline" href="">A</a>
             </div>
-            <div class="grid-column mb1">
+            <div class="grid-row mt4 mb4">
                 <a class="btn btn--outline" href="">B</a>
             </div>
-            <div class="grid-column mb1">
+            <div class="grid-row mt4 mb4">
                 <a class="btn btn--outline" href="">C</a>
             </div>
-            <div class="grid-column mb1">
+            <div class="grid-row mt4 mb4">
                 <a class="btn btn--outline" href="">D</a>
             </div>
-        </div>         
     </section>
+    </div>
+</div>
 </main>
 <!-- Footer -->
 <footer class="pt2 pb2">
