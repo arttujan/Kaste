@@ -10,6 +10,7 @@
         interval:100
     })
 }
+
 }();
 // Config object to be passed to Msal on creation
 const msalConfig = {
