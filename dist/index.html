@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en-us">
+    <div style="height:100%">
     <head>
         <!-- Meta -->
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes,height=device-height">
 
         <title>Kaste</title>
         <meta name="description" content="">
@@ -25,7 +26,7 @@
         <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
         <!-- Interner Explorerin scriptit -->
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-        <style>.fallback,.player,body,html{overflow:auto;width:100%;height:100vh;min-height:100%;max-height:100%;position:fixed;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}.fullscreen{position:fixed;height:100vh;top:0;left:0;bottom:0;right:0;overflow:auto}.video-js.vjs-has-started .vjs-control.vjs-close-modal{opacity:1;transition:opacity .1s;position:absolute;right:0;width:16px;height:100vh;background-size:cover;cursor:pointer}.video-js.vjs-ended .vjs-big-play-button{display:block}</style> 
+        <style>.fallback,.player,body,html{overflow:auto;width:100%;height:100%;min-height:100%;max-height:100%;position:relative;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}.fullscreen{height:auto;max-height:100%;top:0;left:0;bottom:0;right:0;overflow:auto}.video-js.vjs-has-started .vjs-control.vjs-close-modal{opacity:1;transition:opacity .1s;position:absolute;right:0;width:16px;height:100vh;background-size:cover;cursor:pointer}.fitToContent{height:100%;width:100%;max-width:100%;min-width:100%;max-height:100%;min-height:100%}.foot{bottom:0;position:absolute;align-content:center;align-items:center;display:flex;justify-content:center;width:100%}.bottom{bottom:0}.top{top:0;margin-bottom:1vh;position:relative}.video-js.vjs-ended .vjs-big-play-button{display:block}.buttonstyle1{border-radius:2em;padding:.2em 2em;color:#faebd7;text-align:center;font-weight:300;background-color:#2d2b31;margin:0 .3em .3em 0}.buttonstyle1:hover{background-color:#1e1d21}</style> 
         <script> 
             !function(){
                 if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};
@@ -43,61 +44,54 @@
         </script>
         <style data-player="c9b95f27-4169-420c-b280-ee268390d0d4"></style>
     </head>
-<body class="has-animations">
+<body>
 
-<div class="fullscreen">
 <!-- Header -->
-<header class="align--center container">
-    <div class="container">
-        <h1 title="Kaste App"><img class="logo" src="/img/logotext.png" alt="Kaste App"></h1>
-        <p>Suoratoistosovellus opetuskäyttöön</p>
-    </div>
+<header class="align--center container top" style="height:5%">
+            <img style="max-width:25vh;max-height:25vh" class="top" src="/img/logotext.png" alt="Kaste App">
 </header>
 <!-- Body -->
-<main>
+<main class="bottom" style="height:100%;max-height:95%;overflow:hidden">
 <!-- SOITIN -->
-<div id="videoContainer" style="position:relative;display:block;min-width:fit-content;height:100vh">
-    <div style="padding-top:150%">
+<div class="bottom" style="height:100%">
+<div id="videoContainer" class="fitToContent">
+    <div style="position:relative;min-width:fit-content;height:100%">
       <video id="myPlayerID" data-video-id="6057428475001" data-account="1752604059001" data-player="tUnbGgd07" data-embed="default" data-application-id class="video-js" controls playsinline style="position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%"></video>
       <script src="//players.brightcove.net/1752604059001/tUnbGgd07_default/index.min.js"></script>
+      <div class="foot" style="margin-bottom:5vh">
+        <!-- NAPIT -->
+        <div class="align--center">
+            <ul class="no-bullets list--inline">
+                    <li>
+                        <button class="buttonstyle1">
+                            A
+                        </button>
+                    </li>
+                    <li>
+                        <button class="buttonstyle1">
+                            B
+                        </button>
+                    </li>
+                    <li>
+                        <button class="buttonstyle1">
+                            C
+                        </button>
+                    </li>
+                    <li>
+                        <button class="buttonstyle1">
+                            D
+                        </button>
+                    </li>
+            </ul>
+        </div>
+        </div>
+        <p class="foot">&copy; Kaste 2020</p>
     </div>
 </div>
-    <!-- Custom script for setting player in full width mode -->
-    <script src="//solutions.brightcove.com/bcls/brightcove-player/vertical-player/vertical-video.js"></script>
-    <script>
-        videojs.getPlayer('myPlayerID').ready(function () {
-          var myPlayer = this;
-          myPlayer.verticalVideo();
-        });
-      </script>
-    <div class="container align--center">
-    <!-- NAPIT -->
-        <section class="mobile-m container align--center">
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">A</button>
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">B</button>
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">C</button>
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">D</button>
-        </section>
-    </div>
-</main>
-<!-- Footer -->
-<footer class="pt2 container">
-    <div class="container align--center">
-        <ul class="no-bullets list--inline mt1">
-            <li class="mr1"><a href="https://www.facebook.com" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
-            <li class="mr1"><a href="https://www.twitter.com" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
-            <li><a href="https://www.instagram.com" class="link"><img class="icon" src="/img/instagram.svg" alt="Instagram"></a></li>
-        </ul>
-        <p>&copy; Kaste 2020</p>
-    </div>
-</footer>
-</div>
-    <!-- Scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
+</div></main>
     <!-- The compiled JavaScript file -->
     <script src="js/production.js"></script>
-
     </body>
+</div>
 </html>
 

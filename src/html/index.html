@@ -1,18 +1,15 @@
 @@include("partials/head.html")
-<div class="fullscreen">
 <!-- Header -->
-<header class="align--center container">
-    <div class="container">
-        <h1 title="Kaste App"><img class="logo" src="/img/logotext.png" alt="Kaste App"></h1>
-        <p>Suoratoistosovellus opetuskäyttöön</p>
-    </div>
+<header class="align--center container top" style="height: 5%;">
+            <img style="max-width: 25vh; max-height: 25vh;" class="top" src="/img/logotext.png" alt="Kaste App">
 </header>
 <!-- Body -->
-<main>
+<main class="bottom" style="height: 100%; max-height: 95%; overflow: hidden;">
 <!-- SOITIN -->
-<div id="videoContainer"style="position: relative; display: block;
-min-width: fit-content; height: 100vh;">
-    <div style="padding-top: 150%;">
+<div class="bottom" style="height: 100%;">
+<div id="videoContainer" class="fitToContent">
+    <div style="position: relative;
+    min-width: fit-content; height: 100%;">
       <video 
         id="myPlayerID"
         data-video-id="6057428475001"
@@ -32,36 +29,35 @@ min-width: fit-content; height: 100vh;">
             width: 100%; 
             height: 100%;"></video>
       <script src="//players.brightcove.net/1752604059001/tUnbGgd07_default/index.min.js"></script>
+      <div class="foot" style="margin-bottom: 5vh;">
+        <!-- NAPIT -->
+        <div class="align--center">
+            <ul class="no-bullets list--inline">
+                    <li>
+                        <button class="buttonstyle1">
+                            A
+                        </button>
+                    </li>
+                    <li>
+                        <button class="buttonstyle1">
+                            B
+                        </button>
+                    </li>
+                    <li>
+                        <button class="buttonstyle1">
+                            C
+                        </button>
+                    </li>
+                    <li>
+                        <button class="buttonstyle1">
+                            D
+                        </button>
+                    </li>
+            </ul>
+        </div>
+        </div>
+        <p class="foot">&copy; Kaste 2020</p>
     </div>
 </div>
-    <!-- Custom script for setting player in full width mode -->
-    <script src="//solutions.brightcove.com/bcls/brightcove-player/vertical-player/vertical-video.js"></script>
-    <script type="text/javascript">
-        videojs.getPlayer('myPlayerID').ready(function () {
-          var myPlayer = this;
-          myPlayer.verticalVideo();
-        });
-      </script>
-    <div class="container align--center">
-    <!-- NAPIT -->
-        <section class="mobile-m container align--center">
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">A</button>
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">B</button>
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">C</button>
-                <button class="btn btn--outline pt2 pb2 pl4 pr4">D</button>
-        </section>
-    </div>
 </main>
-<!-- Footer -->
-<footer class="pt2 container">
-    <div class="container align--center">
-        <ul class="no-bullets list--inline mt1">
-            <li class="mr1"><a href="https://www.facebook.com" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
-            <li class="mr1"><a href="https://www.twitter.com" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
-            <li><a href="https://www.instagram.com" class="link"><img class="icon" src="/img/instagram.svg" alt="Instagram"></a></li>
-        </ul>
-        <p>&copy; Kaste 2020</p>
-    </div>
-</footer>
-</div>
 @@include("partials/foot.html")
