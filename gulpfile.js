@@ -1,5 +1,9 @@
+'use strict';
 // Get things set up
 // -------------------------------------------------------------------
+
+const nodemon = require("nodemon");
+require('dotenv').config();
     // Include Gulp
 var gulp                    = require("gulp"),
 
@@ -31,14 +35,14 @@ var gulp                    = require("gulp"),
 // Tasks
 // -------------------------------------------------------------------
 // Start server
-gulp.task("browser-sync", function() {
-    browserSync({
-        server: {
-            baseDir: "dist"
-        },
-        ghostMode: false
-    });
-});
+// gulp.task("browser-sync", function() {
+//     browserSync({
+//         server: {
+//             baseDir: "dist"
+//         },
+//         ghostMode: false
+//     });
+// });
 
 // Notify on error with a beep
 var onError = function(error) {
@@ -117,6 +121,24 @@ gulp.task("images", function() {
         .pipe(gulp.dest("dist/img"));
 });
 
+
+
+gulp.task('nodemon', function (cb) {
+    
+    var started = false;
+	
+	return nodemon({
+        script: 'index.js'
+	}).on('start', function () {
+        // to avoid nodemon being started multiple times
+		// thanks @matthisk
+		if (!started) {
+            setTimeout(cb, 500);
+			started = true; 
+		} 
+	});
+});
+
 // Use default task to launch BrowserSync and watch all files
 gulp.task("default", ["browser-sync"], function () {
     // All browsers reload after tasks are complete
@@ -135,5 +157,14 @@ gulp.task("default", ["browser-sync"], function () {
     // Watch image files
     watch("src/img/**/*.+(png|jpeg|jpg|gif|svg)", function () {
         gulp.start("images", reload);
+    });
+});
+
+gulp.task('browser-sync', ['nodemon'], function() {
+    browserSync.init(null, {
+        proxy: "http://localhost:" + process.env.PORT + "/",
+        files: ["dist/*/**"],
+        //browser: "google chrome",
+        port: process.env.PROXY_PORT,
     });
 });
