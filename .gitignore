@@ -1,3 +1,5 @@
+#ignore env file for not letting people know our SECRET INFORMATION
+.env
 # Compiled source
 *.com
 *.class
