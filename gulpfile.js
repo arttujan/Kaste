@@ -19,7 +19,7 @@ var gulp                    = require("gulp"),
 
     // JS plugins
     concat                  = require("gulp-concat"),
-    uglify                  = require("gulp-uglify"),
+    uglify                  = require("gulp-uglify-es").default,
 
     // Image plugin
     imagemin                = require("gulp-imagemin"),
@@ -162,7 +162,7 @@ gulp.task("default", ["browser-sync"], function () {
 
 gulp.task('browser-sync', ['nodemon'], function() {
     browserSync.init(null, {
-        proxy: "http://localhost:" + process.env.PORT + "/",
+        proxy: `http://localhost:${process.env.PORT}`,
         files: ["dist/*/**"],
         //browser: "google chrome",
         port: process.env.PROXY_PORT,
