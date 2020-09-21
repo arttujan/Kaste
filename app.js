@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const config = require('./utils/config')
 const questionRouter = require('./controllers/question')
+const middleware = require('./utils/middleware')
 
 // Taking connection to the database
 mongoose.connect(config.CONNECTION_STRING, {useNewUrlParser : true, useUnifiedTopology : true})
@@ -25,6 +26,8 @@ app.use(express.json())
 // Test route
 app.use('/api/question', questionRouter)
 
+// Lets handle unknown endpoints
+app.use(middleware.unknownEndpoint)
 // Lets export the actual application for server to launch
 module.exports = app
 

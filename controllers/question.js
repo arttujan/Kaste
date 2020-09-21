@@ -1,23 +1,51 @@
 const questionRouter = require('express').Router()
+const Question = require('../models/question')
 
+// Returns all questions
 questionRouter.get('/', (req, res) => {
-    res.send('Annetaan tässä kaikki kysymykset mitä on')
+    Question.find({}).then(questions => {
+        res.json(questions.map(q => q.toJSON()))
+    })
 })
-
+// Returns one question based on id
 questionRouter.get('/:id', (req, res) => {
-    res.send('Annetaan tässä yksi kysymys id:n perusteella minkä syötti')
+    Question.findById(req.params.id).then(q => {
+         res.send(q.toJSON())
+    })
 })
-
+// Adds new questions
 questionRouter.post('/', (req, res) => {
-    res.send('Lisätään tässä uusi kysymys')
+    const question = new Question({
+        question: req.body.question,
+        date: new Date(),
+        updated: new Date(),
+        answers: req.body.answers
+    })
+    question.save().then(q => {
+        res.json(q.toJSON())
+    }).catch(e => {
+        res.status(401).end()
+    })
 })
-
+// Updates question based on given id
 questionRouter.put('/:id', (req, res) => {
-    res.send('Muokataan tässä vanhaa kysymystä')
-})
+    // TODO
+    const question = {
+        question : req.body.question,
+        answers : req.body.answers,
+        updated : new Date()
+    }
 
+    Question.findByIdAndUpdate(req.params.id, question, {new : true}).then(q => {
+         res.json(q.toJSON());
+    })
+
+})
+// Deltes question based on given id
 questionRouter.delete('/:id', (req, res) => {
-    res.send('Poistetaan tässä kysymys')
+    Question.findByIdAndRemove(req.params.id).then(() => {
+        res.status(204).end();
+    })
 })
 
 module.exports = questionRouter

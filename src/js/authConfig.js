@@ -10,4 +10,3 @@ const msalConfig = {
       storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
     }
   };
-  console.log('heippa maailma')
