@@ -1,0 +1,236 @@
+.btn-explaination {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0px 0px 0px 10px;
+    height: 40px;
+    font-family: arial;
+  }
+  
+  .btn-wrong {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0px 0px 0px 10px;
+    height: 40px;
+    font-family: arial;
+  }
+  
+  .container-check, .container-wrong {
+    padding: 0px 10px 5px 10px;
+    font-family: arial;
+  }
+  
+  .label-text {
+    position: absolute;
+    padding: 10px;
+  }
+  
+  
+  /* SVG Check Mark Animate */
+  
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forward;
+  }
+  
+  .checkmark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    stroke-width: 5;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin-top: 5px;
+    /*   margin: 10% auto; */
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill 0.4s ease-in-out 0.4s forwards,
+      scale 0.3s ease-in-out 0.9s both;
+  }
+  
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes scale {
+    0%,
+    100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px #7ac142;
+    }
+  }
+  
+  /* SVG Wrong Mark Animate */
+  .wrongmark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    stroke-width: 20;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin-top: 5px;
+    /*   margin: 10% auto; */
+    box-shadow: inset 0px 0px 0px #9e0b0f;
+    animation: fill-wrong 0.4s ease-in-out 0.4s forwards,
+      scale 0.3s ease-in-out 0.9s both;
+  }
+  
+  .wrongmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #9e0b0f;
+    fill: none;
+    animation: stroke-wrong 0.6s cubic-bezier(0.65, 0, 0.45, 1) forward;
+  }
+  
+  .wrongmark_wrong {
+    transform-origin: 50% 50%;
+    animation: stroke-wrong 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  @keyframes stroke-wrong {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes scale-wrong {
+    0%,
+    100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  @keyframes fill-wrong {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px #9e0b0f;
+    }
+  }
+  
+  
+  /* Text Animate */
+  
+  span.label-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4794d3;
+    width: 300px;
+  
+   -webkit-animation: alert 2s linear 1s 1 normal ;
+   animation: alert 2s linear 1s 1 normal ;
+  }
+  
+  @-webkit-keyframes alert {
+    0%{
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    5%{
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    10%{
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    15%{
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    20%{
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    25%{
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    30%{
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    35%{
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    40%{
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    45%{
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    50%{
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes alert {
+    0%{
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+    5%{
+      -ms-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    10%{
+      -ms-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    15%{
+      -ms-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    20%{
+      -ms-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    25%{
+      -ms-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    30%{
+      -ms-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    35%{
+      -ms-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    40%{
+      -ms-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    45%{
+      -ms-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    50%{
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }

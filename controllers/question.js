@@ -4,7 +4,8 @@ const Question = require('../models/question')
 // Returns all questions
 questionRouter.get('/', (req, res) => {
     Question.find({}).then(questions => {
-        res.json(questions.map(q => q.toJSON()))
+        // Lets give the results in correct order sorted by order number
+        res.json([...questions].sort((a, b) => a.order - b.order).map(q => q.toJSON()))
     })
 })
 // Returns one question based on id
@@ -15,11 +16,13 @@ questionRouter.get('/:id', (req, res) => {
 })
 // Adds new questions
 questionRouter.post('/', (req, res) => {
+    console.log(req.body)
     const question = new Question({
         question: req.body.question,
-        date: new Date(),
+        added: new Date(),
         updated: new Date(),
-        answers: req.body.answers
+        answers: req.body.answers,
+        order : req.body.order
     })
     question.save().then(q => {
         res.json(q.toJSON())
@@ -33,7 +36,8 @@ questionRouter.put('/:id', (req, res) => {
     const question = {
         question : req.body.question,
         answers : req.body.answers,
-        updated : new Date()
+        updated : new Date(),
+        order : req.body.order
     }
 
     Question.findByIdAndUpdate(req.params.id, question, {new : true}).then(q => {

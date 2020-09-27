@@ -1,0 +1,35 @@
+@@include("partials/head.html")
+
+<form>
+    <table>
+        <tr>
+            <td>
+                Kysymys: 
+            </td>
+            <td>
+                <input type="text" id="question_name" name="question_name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Lisää vastaus: </td>
+            <td><input type="text" id="answer_name" name="answer_name"/></td>
+            <td>Oikein: <input type="checkbox" id="correct" name="correct"/></td>
+            <td><button id="submitAnswer">Send</button></td>
+        </tr>
+        <tr>
+            <td>
+                <ul id="answers_table">
+                
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="submit_question">Send question</button>
+            </td>
+        </tr>
+    </table>
+    
+</form>
+
+@@include("partials/foot.html")
