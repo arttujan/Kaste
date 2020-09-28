@@ -38,6 +38,7 @@ $(() => {
       if(document.getElementById('question_text') != null) 
       {
         $('#question_text').html(data[0].question)
+        $('#question_text').removeClass('hidden')
       }
       
       if(document.getElementById('answers') != null) 
@@ -49,7 +50,7 @@ $(() => {
             console.log(a)
             // THIS CORRECT PART IS REALY STUPID AND SHOULD DEFINITELY NOT BE SHOWN FOR THE END USER IN PRODUCTION
             // MADE FOR JUST DEMO PURPOSES
-            $('#answers').append('<li><button hidden" correct="' + a.correct + '"class="answer hidden" id="answer-' + i + '">' + a.answer + '</button></li>')
+            $('#answers').append('<li><button hidden" correct="' + a.correct + '"class="answer hidden buttonstyle1" id="answer-' + i + '">' + a.answer + '</button></li>')
           })
           
         }
