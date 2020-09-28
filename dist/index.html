@@ -52,7 +52,7 @@
 <div class="bottom soitintopdivstyle">
 <div id="videoContainer" class="fitToContent">
     <div class="soitindivstyle">
-      <video id="myPlayerID" data-video-id="6057428475001" data-account="1752604059001" data-player="tUnbGgd07" data-embed="default" data-application-id class="video-js soitinvideostyle" controls playsinline></video>
+      <video id="myPlayerID" data-video-id="6057428475001" data-account="1752604059001" data-player="tUnbGgd07" data-embed="default" data-application-id class="video-js soitinvideostyle" playsinline autoplay></video>
       <script src="//players.brightcove.net/1752604059001/tUnbGgd07_default/index.min.js"></script>
       <div class="foot" style="margin-bottom:5vh">
         <!-- NAPIT -->
@@ -64,7 +64,10 @@
                 <circle class="wrongmark__circle" cx="26" cy="26" r="25" fill="none"/>	
                 <path class="wrongmark_wrong" fill="none" d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306   C474.995,612,612,474.995,612,306z M168.3,424.032L286.333,306L168.3,187.967l19.667-19.667L306,286.333L424.032,168.3   l19.668,19.667L325.667,306L443.7,424.032L424.032,443.7L306,325.667L187.967,443.7L168.3,424.032z"/>
             </svg>
-            <h1 id="question_text" class="text--white"></h1>
+            <div id="myProgress">
+                <div id="progressbar"></div>
+            </div>
+            <h1 id="question_text" style="color:#fff"></h1>
             <ul id="answers" class="no-bullets list--inline">
                     <!-- <li>
                         <button id="btnA" class="buttonstyle1">

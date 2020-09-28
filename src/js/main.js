@@ -32,26 +32,31 @@ if(document.getElementById('myPlayerID') != null) {
 }
 $(() => {
   // Example for getting data from api
-  $.get('/api/question', data => {
-    if(document.getElementById('question_text') != null) 
-    {
-      $('#question_text').html(data[0].question)
-    }
+  setTimeout(() => {
 
-    if(document.getElementById('answers') != null) 
-    {
-      if(data[0].answers.length > 0) {
-        data[0].answers.map((a, i) => {
-          console.log(a)
-          // THIS CORRECT PART IS REALY STUPID AND SHOULD DEFINITELY NOT BE SHOWN FOR THE END USER IN PRODUCTION
-          // MADE FOR JUST DEMO PURPOSES
-          $('#answers').append('<li><button correct="' + a.correct + '"class="answer" id="answer-' + i + '">' + a.answer + '</button></li>')
-        })
+    $.get('/api/question', data => {
+      if(document.getElementById('question_text') != null) 
+      {
+        $('#question_text').html(data[0].question)
       }
-    }
-  }).then(data => {
-    addAnswerClickListeners();
-  })
+  
+      if(document.getElementById('answers') != null) 
+      {
+        if(data[0].answers.length > 0) {
+          // TÄSSÄ MYÖS SETTIMEOUT
+          data[0].answers.map((a, i) => {
+            console.log(a)
+            // THIS CORRECT PART IS REALY STUPID AND SHOULD DEFINITELY NOT BE SHOWN FOR THE END USER IN PRODUCTION
+            // MADE FOR JUST DEMO PURPOSES
+            $('#answers').append('<li><button correct="' + a.correct + '"class="answer" id="answer-' + i + '">' + a.answer + '</button></li>')
+          })
+        }
+      }
+    }).then(data => {
+      addAnswerClickListeners();
+    })
+
+  }, 1000)
 
   if(document.getElementById('submitAnswer') != null) 
   {
@@ -85,7 +90,26 @@ $(() => {
       } 
     })
   }
-
+  var i = 0;
+  var move = () => {
+    if (i == 0) {
+      i = 1;
+      var elem = document.getElementById("progressbar");
+      var width = 0;
+      var id = setInterval(frame, 300);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+          i = 0;
+        } else {
+          width++;
+          elem.style.width = width + "%";
+          //elem.innerHTML = width + "%";
+        }
+      }
+    }
+  }
+  setTimeout(() => move(), 1000)
 })
 
 var addAnswerClickListeners = () => {
@@ -118,4 +142,5 @@ var addAnswerClickListeners = () => {
     // Must write code that displays right/wrong mark
 
   })
+
 }
