@@ -33,13 +33,13 @@
     stroke-width: 2;
     stroke-miterlimit: 10;
     stroke: #7ac142;
-    fill: none;
+    fill: #7ac142;
     animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forward;
   }
   
   .checkmark {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     stroke-width: 5;
     stroke: #fff;
@@ -80,10 +80,10 @@
   
   /* SVG Wrong Mark Animate */
   .wrongmark {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    stroke-width: 20;
+    stroke-width: 30;
     stroke: #fff;
     stroke-miterlimit: 10;
     margin-top: 5px;
@@ -99,7 +99,7 @@
     stroke-width: 2;
     stroke-miterlimit: 10;
     stroke: #9e0b0f;
-    fill: none;
+    fill: #9e0b0f;
     animation: stroke-wrong 0.6s cubic-bezier(0.65, 0, 0.45, 1) forward;
   }
   
@@ -124,7 +124,7 @@
   }
   @keyframes fill-wrong {
     100% {
-      box-shadow: inset 0px 0px 0px 30px #9e0b0f;
+      box-shadow: inset 0px 0px 0px 80px #9e0b0f;
     }
   }
   
