@@ -39,24 +39,26 @@ $(() => {
       {
         $('#question_text').html(data[0].question)
       }
-  
+      
       if(document.getElementById('answers') != null) 
       {
         if(data[0].answers.length > 0) {
           // TÄSSÄ MYÖS SETTIMEOUT
+         
           data[0].answers.map((a, i) => {
             console.log(a)
             // THIS CORRECT PART IS REALY STUPID AND SHOULD DEFINITELY NOT BE SHOWN FOR THE END USER IN PRODUCTION
             // MADE FOR JUST DEMO PURPOSES
-            $('#answers').append('<li><button correct="' + a.correct + '"class="answer" id="answer-' + i + '">' + a.answer + '</button></li>')
+            $('#answers').append('<li><button hidden" correct="' + a.correct + '"class="answer hidden" id="answer-' + i + '">' + a.answer + '</button></li>')
           })
+          
         }
       }
     }).then(data => {
       addAnswerClickListeners();
     })
 
-  }, 1000)
+  }, 10000)
 
   if(document.getElementById('submitAnswer') != null) 
   {
@@ -109,7 +111,10 @@ $(() => {
       }
     }
   }
-  setTimeout(() => move(), 1000)
+  setTimeout(() => {
+   move();
+   $('.answer').removeClass('hidden') 
+  }, 45000)
 })
 
 var addAnswerClickListeners = () => {
