@@ -164,7 +164,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
     browserSync.init(null, {
         proxy: `http://localhost:${process.env.PORT}`,
         files: ["dist/*/**"],
-        //browser: "google chrome",
+        browser: "google chrome",
         port: process.env.PROXY_PORT,
     });
 });
