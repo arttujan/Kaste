@@ -31,8 +31,23 @@
 //   });
 // }
 $(() => {
+
+  // Player
+  if (flvjs.isSupported()) {
+    let videoElement = document.getElementById('myPlayerID');
+    let flvPlayer = flvjs.createPlayer({
+        type: 'flv',
+        url: 'http://localhost:8000/live/live.flv'
+    });
+    
+    flvPlayer.attachMediaElement(videoElement);
+    flvPlayer.load();
+    flvPlayer.play();
+    
+  }
+
   // Example for getting data from api
-  setTimeout(() => {
+  
 
     $.get('/api/question', data => {
       if(document.getElementById('question_text') != null) 
@@ -47,10 +62,10 @@ $(() => {
           // TÄSSÄ MYÖS SETTIMEOUT
          
           data[0].answers.map((a, i) => {
-            console.log(a)
+            //console.log(a)
             // THIS CORRECT PART IS REALY STUPID AND SHOULD DEFINITELY NOT BE SHOWN FOR THE END USER IN PRODUCTION
             // MADE FOR JUST DEMO PURPOSES
-            $('#answers').append('<li><button hidden" correct="' + a.correct + '"class="answer hidden buttonstyle1" id="answer-' + i + '">' + a.answer + '</button></li>')
+            $('#answers').append('<li><button correct="' + a.correct + '"class="answer buttonstyle1" id="answer-' + i + '">' + a.answer + '</button></li>')
           })
           
         }
@@ -59,11 +74,11 @@ $(() => {
       addAnswerClickListeners();
     })
 
-  }, 10000)
+  
 
   if(document.getElementById('submitAnswer') != null) 
   {
-    var answers = []
+    let answers = []
     $('#submitAnswer').on('click', (e) => {
       e.preventDefault()
       answers.push({answer : $('#answer_name').val(), correct : $("#correct").is(':checked')})
@@ -97,9 +112,9 @@ $(() => {
   var move = () => {
     if (i == 0) {
       i = 1;
-      var elem = document.getElementById("progressbar");
-      var width = 0;
-      var id = setInterval(frame, 300);
+      let elem = document.getElementById("progressbar");
+      let width = 0;
+      let id = setInterval(frame, 300);
       function frame() {
         if (width >= 100) {
           clearInterval(id);
@@ -112,10 +127,9 @@ $(() => {
       }
     }
   }
-  setTimeout(() => {
-   move();
-   $('.answer').removeClass('hidden') 
-  }, 45000)
+  
+  move();
+  
 })
 
 var addAnswerClickListeners = () => {
@@ -124,8 +138,8 @@ var addAnswerClickListeners = () => {
       SHOULD BE CALLING FOR API TO GET RIGHT ANWER
     */
 
-    var btn = e.target
-    var correct = $(btn).attr('correct')
+    let btn = e.target
+    let correct = $(btn).attr('correct')
     
     if(correct === 'true') {
       $('#answer_right').removeClass('hidden')

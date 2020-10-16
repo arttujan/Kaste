@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-us">
+    <div style="height:100%;background-color:#faebd7">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes,height=device-height">
+        <title>Kaste</title>
+        <meta name="description" content="">
+        <!-- The compiled CSS file -->
+        <link rel="stylesheet" href="css/production.css">
+        <!-- Web fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+        <!-- favicon.ico. Place these in the root directory. -->
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- Soitin -->
+        <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+        <script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.min.js"></script>
+        <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
+        <!-- Interner Explorerin scriptit -->
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <style>.fallback,.player,body,html{overflow:auto;width:100%;height:100%;min-height:100%;max-height:100%;position:relative;margin:0;padding:0;background-color:transparent}.player.loading{opacity:0}.fullscreen{height:auto;max-height:100%;top:0;left:0;bottom:0;right:0;overflow:auto}.video-js.vjs-has-started .vjs-control.vjs-close-modal{opacity:1;transition:opacity .1s;position:absolute;right:0;width:16px;height:100vh;background-size:cover;cursor:pointer}.fitToContent{height:100%;width:100%;max-width:100%;min-width:100%;max-height:100%;min-height:100%}.foot{bottom:0;position:absolute;align-content:center;align-items:center;display:flex;justify-content:center;width:100%}.bottom{bottom:0}.top{top:0;margin-bottom:1vh;position:relative}.video-js.vjs-ended .vjs-big-play-button{display:block}.buttonstyle1{border-radius:2em;padding:.2em 2em;color:#000;text-align:center;font-weight:500;font-size:2vh;background-color:#faebd7;margin:0 .3em .3em 0}.bodystyle{height:100%;max-height:95%;overflow:hidden}.soitintopdivstyle{height:100%}.soitindivstyle{position:relative;min-width:fit-content;height:100%}.soitinvideostyle{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%}</style> 
+        <script> 
+            !function(){
+                if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};
+                    g.o=new PerformanceObserver(function(l){
+                    g.e=g.e.concat(l.getEntries())
+                        });
+                        g.o.observe({
+                            entryTypes:['longtask']
+                        })
+                    }
+                }(); 
+        </script> 
+        <!--[if IE] -->
+        <script>var cacheBuster = '?' + Math.round((Math.random() * 1000) + new Date().getTime()); 
+        </script>
+        <style data-player="c9b95f27-4169-420c-b280-ee268390d0d4"></style>
+    </head>
+<body>
+<!-- Header -->
+<header class="align--center container top" style="height:5%;background-color:#faebd7">
+    <img style="max-width:25vh;max-height:25vh" class="top" src="/img/logotext.png" alt="Kaste App">
+</header>
+
+
+<!-- Body -->
+<main class="bottom bodystyle">
+<!-- SOITIN -->
+<div class="bottom soitintopdivstyle">
+<div id="videoContainer" class="fitToContent">
+    <div class="soitindivstyle">
+    <video controls width="250" id="myPlayerID" class="video-js soitinvideostyle" autoplay="true" muted="muted">
+    </video>
+
+    <div class="foot" style="margin-bottom:5vh">
+        <!-- NAPIT -->
+        <div class="align--center">
+            <svg id="answer_right" class="checkmark hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <svg id="answer_wrong" class="hidden wrongmark" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 612 612">
+                <circle class="wrongmark__circle" cx="26" cy="26" r="25" fill="none"/>	
+                <path class="wrongmark_wrong" fill="none" d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306   C474.995,612,612,474.995,612,306z M168.3,424.032L286.333,306L168.3,187.967l19.667-19.667L306,286.333L424.032,168.3   l19.668,19.667L325.667,306L443.7,424.032L424.032,443.7L306,325.667L187.967,443.7L168.3,424.032z"/>
+            </svg>
+            <div id="myProgress">
+                <div id="progressbar"></div>
+            </div>
+            <h1 id="question_text" class="hidden buttonstyle1"></h1>
+            <ul id="answers" class="no-bullets list--inline">
+            </ul>
+        </div>
+        </div>
+        <p class="foot">&copy; Kaste 2020</p>
+    </div>
+</div>
+</div></main>
+    <!-- The compiled JavaScript file -->
+    <script src="js/production.js"></script>
+    </body>
+</div>
+</html>
+

@@ -4,6 +4,10 @@ const cors = require('cors')
 const config = require('./utils/config')
 const questionRouter = require('./controllers/question')
 const middleware = require('./utils/middleware')
+//media server
+const nms = require('./mediasrv/mediasrv')
+
+nms.run();
 
 // Taking connection to the database
 mongoose.connect(config.CONNECTION_STRING, {useNewUrlParser : true, useUnifiedTopology : true})
