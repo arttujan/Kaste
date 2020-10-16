@@ -34,7 +34,7 @@ $(() => {
 
   // Player
   if (flvjs.isSupported()) {
-    let videoElement = document.getElementById('myPlayerID');
+    let videoElement = document.getElementById('myPlayerIDtest');
     let flvPlayer = flvjs.createPlayer({
         type: 'flv',
         url: 'http://localhost:8000/live/live.flv'
