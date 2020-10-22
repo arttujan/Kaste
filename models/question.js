@@ -5,7 +5,8 @@ var questionSchema = new mongoose.Schema({
     answers : [{answer : String, correct : Boolean}],
     added: Date,
     updated : Date,
-    order: Number
+    order: Number,
+    visible: Boolean
 })
 
 questionSchema.set('toJSON', {

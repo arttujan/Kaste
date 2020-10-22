@@ -22,7 +22,8 @@ questionRouter.post('/', (req, res) => {
         added: new Date(),
         updated: new Date(),
         answers: req.body.answers,
-        order : req.body.order
+        order : req.body.order,
+        visible: req.body.visible
     })
     question.save().then(q => {
         res.json(q.toJSON())
@@ -37,7 +38,8 @@ questionRouter.put('/:id', (req, res) => {
         question : req.body.question,
         answers : req.body.answers,
         updated : new Date(),
-        order : req.body.order
+        order : req.body.order,
+        visible: req.body.visible
     }
 
     Question.findByIdAndUpdate(req.params.id, question, {new : true}).then(q => {

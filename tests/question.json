@@ -1,0 +1,8 @@
+{
+    "question" : "Meneekö hyvin?",
+    "answers" : [
+        {"answer" : "Kyllä", "correct" : true},
+        {"answer" : "Ei", "correct" : false}
+    ],
+    "visible" : true
+}

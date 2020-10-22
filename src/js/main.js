@@ -33,46 +33,91 @@
 $(() => {
 
   // Player
-  if (flvjs.isSupported()) {
-    let videoElement = document.getElementById('myPlayerIDtest');
-    let flvPlayer = flvjs.createPlayer({
-        type: 'flv',
-        url: 'http://localhost:8000/live/live.flv'
+  // if (flvjs.isSupported()) {
+  //   let videoElement = document.getElementById('myPlayerIDtest');
+  //   let flvPlayer = flvjs.createPlayer({
+  //       type: 'flv',
+  //       url: 'http://192.168.1.32:8000/live/live.flv'
+  //   });
+    
+  //   flvPlayer.attachMediaElement(videoElement);
+  //   flvPlayer.load();
+  //   flvPlayer.play();
+    
+  // }
+
+  let video = document.getElementById('myPlayerIDtest');
+  let videoSrc = 'http://localhost:8000/live/live/index.m3u8';
+  if (Hls.isSupported()) {
+    let hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      video.play();
     });
-    
-    flvPlayer.attachMediaElement(videoElement);
-    flvPlayer.load();
-    flvPlayer.play();
-    
+  }
+  // hls.js is not supported on platforms that do not have Media Source
+  // Extensions (MSE) enabled.
+  //
+  // When the browser has built-in HLS support (check using `canPlayType`),
+  // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
+  // element through the `src` property. This is using the built-in support
+  // of the plain video element, without using hls.js.
+  //
+  // Note: it would be more normal to wait on the 'canplay' event below however
+  // on Safari (where you are most likely to find built-in HLS support) the
+  // video.src URL must be on the user-driven white-list before a 'canplay'
+  // event will be emitted; the last video event that can be reliably
+  // listened-for when the URL is not on the white-list is 'loadedmetadata'.
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+    video.addEventListener('loadedmetadata', function() {
+      video.play();
+    });
   }
 
   // Example for getting data from api
+    // TRYING TO GET QUESTION EVERY 5 SECONDS
+    let inter = setInterval(() => {
+      $.get('/api/question', data => {
+        if(document.getElementById('question_text') != null) 
+        {
+          let item = null;
   
-
-    $.get('/api/question', data => {
-      if(document.getElementById('question_text') != null) 
-      {
-        $('#question_text').html(data[0].question)
-        $('#question_text').removeClass('hidden')
-      }
-      
-      if(document.getElementById('answers') != null) 
-      {
-        if(data[0].answers.length > 0) {
-          // TÄSSÄ MYÖS SETTIMEOUT
-         
-          data[0].answers.map((a, i) => {
-            //console.log(a)
-            // THIS CORRECT PART IS REALY STUPID AND SHOULD DEFINITELY NOT BE SHOWN FOR THE END USER IN PRODUCTION
-            // MADE FOR JUST DEMO PURPOSES
-            $('#answers').append('<li><button correct="' + a.correct + '"class="answer buttonstyle1" id="answer-' + i + '">' + a.answer + '</button></li>')
+          data.map((d) => {
+            if(d.visible) item = d;
           })
-          
+  
+          // if getting item, lets show it to the users
+          if (item) {
+            clearInterval(inter)
+            $('#question_text').html(item.question)
+            $('#question_text').removeClass('hidden')
+            
+            if(document.getElementById('answers') != null) 
+            {
+              if(item.answers.length > 0) {
+                // TÄSSÄ MYÖS SETTIMEOUT
+  
+                item.answers.map((a, i) => {
+                  //console.log(a)
+                  // THIS CORRECT PART IS REALY STUPID AND SHOULD DEFINITELY NOT BE SHOWN FOR THE END USER IN PRODUCTION
+                  // MADE FOR JUST DEMO PURPOSES
+                  
+                  $('#answers').append('<li><button correct="' + a.correct + '"class="answer buttonstyle1" id="answer-' + i + '">' + a.answer + '</button></li>')
+                })
+                
+              }
+            }
+          } else {
+            console.log("No items found")
+          }
         }
-      }
-    }).then(data => {
-      addAnswerClickListeners();
-    })
+        
+      }).then(data => {
+        addAnswerClickListeners();
+      })
+    }, 5000);
 
   
 
