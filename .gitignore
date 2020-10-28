@@ -56,3 +56,6 @@ node_modules/
 
 # Other
 archive
+
+#MEDIA SRV transmuxing files
+dist/media
